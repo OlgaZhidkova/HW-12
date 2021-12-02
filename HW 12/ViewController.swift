@@ -8,12 +8,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupView()
+        setupHierarchy()
+        setupLayout()
+        
     }
 
+    // MARK: - Settings
+    
+    private func setupView() {
+        navigationItem.title = "Настройки"
+        navigationController?.navigationBar.barTintColor = .lightGray
+        navigationController?.navigationBar.isTranslucent = false
+    
+    }
+    
+    private func setupHierarchy() {
+    
+    }
+    
+    private func setupLayout() {
+        
+    }
 
 }
 
