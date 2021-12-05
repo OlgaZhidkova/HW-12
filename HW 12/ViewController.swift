@@ -19,12 +19,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         setupView()
         setupHierarchy()
         setupLayout()
+        configure()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifire)
     }
 
     // MARK: - Settings
@@ -33,12 +33,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationItem.title = "Настройки"
         navigationController?.navigationBar.barTintColor = .lightGray
         navigationController?.navigationBar.isTranslucent = false
-    
     }
     
     private func setupHierarchy() {
         view.addSubview(tableView)
-    
     }
     
     private func setupLayout() {
@@ -51,29 +49,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - Functions
     
-    
+    func configure() {
+        self.settings = Array(1...100).compactMap({
+            SettingOptions(title: "Item \($0)", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemGray)
+        })
+    }
     
     // MARK: - DataSourse methods
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let setting = settings[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = setting.title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifire, for: indexPath) as? SettingTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(with: setting)
         return cell
     }
     
     // MARK: - Delegate methods
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
 }
 
 struct SettingOptions {
     let title: String?
     let icon: UIImage?
+    let iconBackgroundColor: UIColor
 }
