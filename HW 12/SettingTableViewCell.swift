@@ -16,9 +16,6 @@ class SettingTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
-//        view.layer.borderWidth = 0.05
-//        view.layer.borderColor = UIColor.lightGray.cgColor
-        
         return view
     }()
     

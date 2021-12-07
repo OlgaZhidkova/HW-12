@@ -16,7 +16,6 @@ class SwitchTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
-        
         return view
     }()
     
@@ -42,9 +41,15 @@ class SwitchTableViewCell: UITableViewCell {
         let mySwitch = UISwitch()
         mySwitch.onTintColor = .systemGreen
         mySwitch.translatesAutoresizingMaskIntoConstraints = false
+        mySwitch.addTarget(self, action: #selector(toggle(_:)), for: .valueChanged)
         return mySwitch
     }()
-    
+
+    @objc func toggle(_ sender: UISwitch) {
+            if mySwitch.isOn {
+                print("Нажата кнопка \(lable.text ?? "").")
+            }
+        }
     
     // MARK: - Settings
     
