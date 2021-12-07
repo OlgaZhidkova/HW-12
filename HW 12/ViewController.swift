@@ -77,7 +77,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         settings.append(Section(title: "First", options: [
             
             .switchCell(type: SettingSwitchOptions(title: "Авиарежим", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemOrange, isOn: true)),
-            .staticCell(type:SettingOptions(title: "Wi-Fi", icon: UIImage(systemName: "wifi"), iconBackgroundColor: .systemBlue))
+            .staticCell(type:SettingOptions(title: "Wi-Fi", icon: UIImage(systemName: "wifi"), iconBackgroundColor: .systemBlue)),
+            .staticCell(type:SettingOptions(title: "Bluetooth", icon: UIImage(named: "bluetooth"), iconBackgroundColor: .systemBlue)),
+            .staticCell(type:SettingOptions(title: "Сотовая связь", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconBackgroundColor: .systemGreen)),
+            .staticCell(type:SettingOptions(title: "Режим модема", icon: UIImage(systemName: "personalhotspot"), iconBackgroundColor: .systemGreen))
+        ]))
+        
+        settings.append(Section(title: "Second", options: [
+            .staticCell(type:SettingOptions(title: "Уведомления", icon: UIImage(systemName: "dot.square"), iconBackgroundColor: .systemRed)),
+            .staticCell(type:SettingOptions(title: "Звуки, тактильные сигналы", icon: UIImage(systemName: "speaker.wave.3.fill"), iconBackgroundColor: .systemRed)),
+            .staticCell(type:SettingOptions(title: "Не беспокоить", icon: UIImage(systemName: "moon.fill"), iconBackgroundColor: .systemPurple)),
+            .staticCell(type:SettingOptions(title: "Экранное время", icon: UIImage(systemName: "hourglass"), iconBackgroundColor: .systemPurple))
+        ]))
+        
+        settings.append(Section(title: "Third", options: [
+            .staticCell(type:SettingOptions(title: "Основные", icon: UIImage(systemName: "gear"), iconBackgroundColor: .systemGray)),
+            .staticCell(type:SettingOptions(title: "Пункт управления", icon: UIImage(systemName: "switch.2"), iconBackgroundColor: .systemGray)),
+            .staticCell(type:SettingOptions(title: "Экран и яркость", icon: UIImage(systemName: "textformat.size"), iconBackgroundColor: .systemBlue)),
+            .staticCell(type:SettingOptions(title: "Экран «Домой»", icon: UIImage(systemName: "apps.iphone"), iconBackgroundColor: .systemBlue)),
+            .staticCell(type:SettingOptions(title: "Универсальный доступ", icon: UIImage(named: "accessibility"), iconBackgroundColor: .systemBlue)),
+            .staticCell(type:SettingOptions(title: "Обои", icon: UIImage(named: "ios-photos"), iconBackgroundColor: .systemTeal)),
+            .staticCell(type:SettingOptions(title: "Siri и Поиск", icon: UIImage(systemName: "magnifyingglass"), iconBackgroundColor: .black)),
+            .staticCell(type:SettingOptions(title: "Face ID и код-пароль", icon: UIImage(systemName: "faceid"), iconBackgroundColor: .systemGreen)),
+            .staticCell(type:SettingOptions(title: "Экстренный вызов - SOS", icon: UIImage(systemName: "phone.fill.connection"), iconBackgroundColor: .systemRed)),
+            .staticCell(type:SettingOptions(title: "Уведомления о контакте", icon: UIImage(systemName: "sun.min.fill"), iconBackgroundColor: .systemRed)),
+            .staticCell(type:SettingOptions(title: "Аккумулятор", icon: UIImage(systemName: "battery.100"), iconBackgroundColor: .systemGreen)),
+            .staticCell(type:SettingOptions(title: "Конфиденциальность", icon: UIImage(systemName: "hand.raised.fill"), iconBackgroundColor: .systemBlue))
         ]))
     }
     
@@ -115,4 +140,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - Delegate methods
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let setting = settings[indexPath.section].options[indexPath.row]
+        switch setting.self {
+        case .staticCell(let setting):
+            tableView.deselectRow(at: indexPath, animated: true)
+            print("Нажата кнопка \(setting.title).")
+        case .switchCell:
+            return
+        }
+    }
 }
