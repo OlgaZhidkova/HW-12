@@ -1,23 +1,21 @@
 //
-//  SettingTableViewCell.swift
+//  SwitchTableViewCell.swift
 //  HW 12
 //
-//  Created by Ольга on 04.12.2021.
+//  Created by Ольга on 06.12.2021.
 //
 
 import UIKit
 
-class SettingTableViewCell: UITableViewCell {
+class SwitchTableViewCell: UITableViewCell {
 
-    static let identifire = "SettingTableViewCell"
+    static let identifire = "SwitchTableViewCell"
     
     private let iconContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
-//        view.layer.borderWidth = 0.05
-//        view.layer.borderColor = UIColor.lightGray.cgColor
         
         return view
     }()
@@ -40,12 +38,22 @@ class SettingTableViewCell: UITableViewCell {
         return lable
     }()
     
+    private let mySwitch: UISwitch = {
+        let mySwitch = UISwitch()
+        mySwitch.onTintColor = .systemGreen
+        mySwitch.translatesAutoresizingMaskIntoConstraints = false
+        return mySwitch
+    }()
+    
+    
     // MARK: - Settings
     
     private func setupHierarchy() {
-        iconContainer.addSubview(iconImageView)
+        
         contentView.addSubview(iconContainer)
+        iconContainer.addSubview(iconImageView)
         contentView.addSubview(lable)
+        contentView.addSubview(mySwitch)
     }
     
     private func setupLayout() {
@@ -61,14 +69,18 @@ class SettingTableViewCell: UITableViewCell {
         
         lable.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         lable.leadingAnchor.constraint(equalTo: iconContainer.trailingAnchor, constant: 10).isActive = true
+       
+        mySwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        mySwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
     }
     
     // MARK: - Configure
     
-    func configure(with settings: SettingOptions) {
+    func configure(with settings: SettingSwitchOptions) {
         lable.text = settings.title
         iconImageView.image = settings.icon
         iconContainer.backgroundColor = settings.iconBackgroundColor
+        mySwitch.isOn = settings.isOn
     }
     
     // MARK: - Initial
@@ -89,5 +101,7 @@ class SettingTableViewCell: UITableViewCell {
         iconImageView.image = nil
         lable.text = nil
         iconContainer.backgroundColor = nil
+        mySwitch.isOn = false
     }
 }
+
