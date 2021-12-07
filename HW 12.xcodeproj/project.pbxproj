@@ -13,6 +13,7 @@
 		77A6605B2758FA2F007827D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A6605A2758FA2F007827D4 /* Assets.xcassets */; };
 		77A6605E2758FA2F007827D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6605C2758FA2F007827D4 /* LaunchScreen.storyboard */; };
 		77A66066275B6F6F007827D4 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A66065275B6F6F007827D4 /* SettingTableViewCell.swift */; };
+		77A66068275E768E007827D4 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A66067275E768E007827D4 /* SwitchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		77A6605D2758FA2F007827D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77A6605F2758FA2F007827D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77A66065275B6F6F007827D4 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		77A66067275E768E007827D4 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				77A660512758FA2B007827D4 /* AppDelegate.swift */,
 				77A660552758FA2B007827D4 /* ViewController.swift */,
 				77A66065275B6F6F007827D4 /* SettingTableViewCell.swift */,
+				77A66067275E768E007827D4 /* SwitchTableViewCell.swift */,
 				77A660572758FA2B007827D4 /* Main.storyboard */,
 				77A6605A2758FA2F007827D4 /* Assets.xcassets */,
 				77A6605C2758FA2F007827D4 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A66066275B6F6F007827D4 /* SettingTableViewCell.swift in Sources */,
+				77A66068275E768E007827D4 /* SwitchTableViewCell.swift in Sources */,
 				77A660562758FA2B007827D4 /* ViewController.swift in Sources */,
 				77A660522758FA2B007827D4 /* AppDelegate.swift in Sources */,
 			);
