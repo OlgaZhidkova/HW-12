@@ -15,7 +15,7 @@
 		776C78E82770D19D004102BA /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776C78E72770D19D004102BA /* SettingsModel.swift */; };
 		776C78EA2770DBFF004102BA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776C78E92770DBFF004102BA /* SettingsView.swift */; };
 		77A660522758FA2B007827D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A660512758FA2B007827D4 /* AppDelegate.swift */; };
-		77A660562758FA2B007827D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A660552758FA2B007827D4 /* ViewController.swift */; };
+		77A660562758FA2B007827D4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A660552758FA2B007827D4 /* SettingsViewController.swift */; };
 		77A6605B2758FA2F007827D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A6605A2758FA2F007827D4 /* Assets.xcassets */; };
 		77A6605E2758FA2F007827D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6605C2758FA2F007827D4 /* LaunchScreen.storyboard */; };
 		77A66066275B6F6F007827D4 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A66065275B6F6F007827D4 /* SettingTableViewCell.swift */; };
@@ -32,7 +32,7 @@
 		776C78E92770DBFF004102BA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		77A6604E2758FA2B007827D4 /* HW 12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW 12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A660512758FA2B007827D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77A660552758FA2B007827D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77A660552758FA2B007827D4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		77A6605A2758FA2F007827D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77A6605D2758FA2F007827D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77A6605F2758FA2F007827D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		776C78DC2770C89B004102BA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				77A660552758FA2B007827D4 /* ViewController.swift */,
+				77A660552758FA2B007827D4 /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -101,9 +101,7 @@
 			children = (
 				776C78E72770D19D004102BA /* SettingsModel.swift */,
 				776C78DF2770D03C004102BA /* SectionModel.swift */,
-				776C78E12770D08D004102BA /* SettingOptions.swift */,
-				776C78E32770D0AB004102BA /* SettingSwitchOptions.swift */,
-				776C78E52770D0CF004102BA /* NotificationSettingOptions.swift */,
+				776C78EC2771213C004102BA /* SettingTypes */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +114,16 @@
 				776C78C72770A23E004102BA /* NotificationTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		776C78EC2771213C004102BA /* SettingTypes */ = {
+			isa = PBXGroup;
+			children = (
+				776C78E12770D08D004102BA /* SettingOptions.swift */,
+				776C78E32770D0AB004102BA /* SettingSwitchOptions.swift */,
+				776C78E52770D0CF004102BA /* NotificationSettingOptions.swift */,
+			);
+			path = SettingTypes;
 			sourceTree = "<group>";
 		};
 		77A660452758FA2B007827D4 = {
@@ -217,7 +225,7 @@
 				776C78E42770D0AB004102BA /* SettingSwitchOptions.swift in Sources */,
 				776C78C82770A23E004102BA /* NotificationTableViewCell.swift in Sources */,
 				77A66068275E768E007827D4 /* SwitchTableViewCell.swift in Sources */,
-				77A660562758FA2B007827D4 /* ViewController.swift in Sources */,
+				77A660562758FA2B007827D4 /* SettingsViewController.swift in Sources */,
 				776C78E62770D0CF004102BA /* NotificationSettingOptions.swift in Sources */,
 				776C78E82770D19D004102BA /* SettingsModel.swift in Sources */,
 				77A660522758FA2B007827D4 /* AppDelegate.swift in Sources */,
