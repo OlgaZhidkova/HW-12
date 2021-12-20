@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		776C78C82770A23E004102BA /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776C78C72770A23E004102BA /* NotificationTableViewCell.swift */; };
+		776C78E02770D03C004102BA /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776C78DF2770D03C004102BA /* SectionModel.swift */; };
+		776C78E22770D08D004102BA /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776C78E12770D08D004102BA /* SettingOptions.swift */; };
+		776C78E42770D0AB004102BA /* SettingSwitchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776C78E32770D0AB004102BA /* SettingSwitchOptions.swift */; };
+		776C78E62770D0CF004102BA /* NotificationSettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776C78E52770D0CF004102BA /* NotificationSettingOptions.swift */; };
+		776C78E82770D19D004102BA /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776C78E72770D19D004102BA /* SettingsModel.swift */; };
+		776C78EA2770DBFF004102BA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776C78E92770DBFF004102BA /* SettingsView.swift */; };
 		77A660522758FA2B007827D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A660512758FA2B007827D4 /* AppDelegate.swift */; };
-		77A660562758FA2B007827D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A660552758FA2B007827D4 /* ViewController.swift */; };
-		77A660592758FA2B007827D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A660572758FA2B007827D4 /* Main.storyboard */; };
+		77A660562758FA2B007827D4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A660552758FA2B007827D4 /* SettingsViewController.swift */; };
 		77A6605B2758FA2F007827D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A6605A2758FA2F007827D4 /* Assets.xcassets */; };
 		77A6605E2758FA2F007827D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6605C2758FA2F007827D4 /* LaunchScreen.storyboard */; };
 		77A66066275B6F6F007827D4 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A66065275B6F6F007827D4 /* SettingTableViewCell.swift */; };
@@ -19,10 +24,15 @@
 
 /* Begin PBXFileReference section */
 		776C78C72770A23E004102BA /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		776C78DF2770D03C004102BA /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
+		776C78E12770D08D004102BA /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
+		776C78E32770D0AB004102BA /* SettingSwitchOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitchOptions.swift; sourceTree = "<group>"; };
+		776C78E52770D0CF004102BA /* NotificationSettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingOptions.swift; sourceTree = "<group>"; };
+		776C78E72770D19D004102BA /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		776C78E92770DBFF004102BA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		77A6604E2758FA2B007827D4 /* HW 12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW 12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A660512758FA2B007827D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77A660552758FA2B007827D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		77A660582758FA2B007827D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		77A660552758FA2B007827D4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		77A6605A2758FA2F007827D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77A6605D2758FA2F007827D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77A6605F2758FA2F007827D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +51,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		776C78D92770C76C004102BA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77A6605A2758FA2F007827D4 /* Assets.xcassets */,
+				77A6605C2758FA2F007827D4 /* LaunchScreen.storyboard */,
+				77A6605F2758FA2F007827D4 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		776C78DA2770C786004102BA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				776C78DE2770C8B6004102BA /* Model */,
+				776C78DD2770C8A6004102BA /* View */,
+				776C78DC2770C89B004102BA /* Controller */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		776C78DB2770C794004102BA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				77A660512758FA2B007827D4 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		776C78DC2770C89B004102BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77A660552758FA2B007827D4 /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		776C78DD2770C8A6004102BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				776C78E92770DBFF004102BA /* SettingsView.swift */,
+				776C78EB2770EE77004102BA /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		776C78DE2770C8B6004102BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				776C78E72770D19D004102BA /* SettingsModel.swift */,
+				776C78DF2770D03C004102BA /* SectionModel.swift */,
+				776C78EC2771213C004102BA /* SettingTypes */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		776C78EB2770EE77004102BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				77A66065275B6F6F007827D4 /* SettingTableViewCell.swift */,
+				77A66067275E768E007827D4 /* SwitchTableViewCell.swift */,
+				776C78C72770A23E004102BA /* NotificationTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		776C78EC2771213C004102BA /* SettingTypes */ = {
+			isa = PBXGroup;
+			children = (
+				776C78E12770D08D004102BA /* SettingOptions.swift */,
+				776C78E32770D0AB004102BA /* SettingSwitchOptions.swift */,
+				776C78E52770D0CF004102BA /* NotificationSettingOptions.swift */,
+			);
+			path = SettingTypes;
+			sourceTree = "<group>";
+		};
 		77A660452758FA2B007827D4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +145,9 @@
 		77A660502758FA2B007827D4 /* HW 12 */ = {
 			isa = PBXGroup;
 			children = (
-				77A660512758FA2B007827D4 /* AppDelegate.swift */,
-				77A660552758FA2B007827D4 /* ViewController.swift */,
-				77A66065275B6F6F007827D4 /* SettingTableViewCell.swift */,
-				77A66067275E768E007827D4 /* SwitchTableViewCell.swift */,
-				776C78C72770A23E004102BA /* NotificationTableViewCell.swift */,
-				77A660572758FA2B007827D4 /* Main.storyboard */,
-				77A6605A2758FA2F007827D4 /* Assets.xcassets */,
-				77A6605C2758FA2F007827D4 /* LaunchScreen.storyboard */,
-				77A6605F2758FA2F007827D4 /* Info.plist */,
+				776C78DB2770C794004102BA /* App */,
+				776C78DA2770C786004102BA /* Sources */,
+				776C78D92770C76C004102BA /* Resources */,
 			);
 			path = "HW 12";
 			sourceTree = "<group>";
@@ -132,7 +211,6 @@
 			files = (
 				77A6605E2758FA2F007827D4 /* LaunchScreen.storyboard in Resources */,
 				77A6605B2758FA2F007827D4 /* Assets.xcassets in Resources */,
-				77A660592758FA2B007827D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,24 +222,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A66066275B6F6F007827D4 /* SettingTableViewCell.swift in Sources */,
+				776C78E42770D0AB004102BA /* SettingSwitchOptions.swift in Sources */,
 				776C78C82770A23E004102BA /* NotificationTableViewCell.swift in Sources */,
 				77A66068275E768E007827D4 /* SwitchTableViewCell.swift in Sources */,
-				77A660562758FA2B007827D4 /* ViewController.swift in Sources */,
+				77A660562758FA2B007827D4 /* SettingsViewController.swift in Sources */,
+				776C78E62770D0CF004102BA /* NotificationSettingOptions.swift in Sources */,
+				776C78E82770D19D004102BA /* SettingsModel.swift in Sources */,
 				77A660522758FA2B007827D4 /* AppDelegate.swift in Sources */,
+				776C78E02770D03C004102BA /* SectionModel.swift in Sources */,
+				776C78E22770D08D004102BA /* SettingOptions.swift in Sources */,
+				776C78EA2770DBFF004102BA /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		77A660572758FA2B007827D4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77A660582758FA2B007827D4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		77A6605C2758FA2F007827D4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -295,7 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "HW 12/Info.plist";
+				INFOPLIST_FILE = "HW 12/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,7 +389,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "HW 12/Info.plist";
+				INFOPLIST_FILE = "HW 12/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

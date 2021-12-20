@@ -1,21 +1,23 @@
 //
-//  NotificationTableViewCell.swift
+//  SettingTableViewCell.swift
 //  HW 12
 //
-//  Created by Ольга on 20.12.2021.
+//  Created by Ольга on 04.12.2021.
 //
 
 import UIKit
 
-class NotificationTableViewCell: UITableViewCell {
+class SettingTableViewCell: UITableViewCell {
 
-    static let identifire = "NotificationTableViewCel"
+    static let identifire = "SettingTableViewCell"
+    
+    // MARK: - Views
     
     private let iconContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
-        view.layer.cornerRadius = 8
+        view.layer.cornerRadius = Metric.containerCornerRadius
         return view
     }()
     
@@ -31,19 +33,8 @@ class NotificationTableViewCell: UITableViewCell {
     private let label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.font = UIFont.systemFont(ofSize: 17)
+        label.font = UIFont.systemFont(ofSize: Metric.labelFont)
         label.textColor = .black
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let notificationLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.font = UIFont.systemFont(ofSize: 17)
-        label.textColor = .systemGray
-        label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -54,34 +45,29 @@ class NotificationTableViewCell: UITableViewCell {
         iconContainer.addSubview(iconImageView)
         contentView.addSubview(iconContainer)
         contentView.addSubview(label)
-        contentView.addSubview(notificationLabel)
     }
     
     private func setupLayout() {
         iconContainer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        iconContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
-        iconContainer.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        iconContainer.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        iconContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metric.containerOffset).isActive = true
+        iconContainer.widthAnchor.constraint(equalToConstant: Metric.containerSize).isActive = true
+        iconContainer.heightAnchor.constraint(equalToConstant: Metric.containerSize).isActive = true
         
         iconImageView.centerYAnchor.constraint(equalTo: iconContainer.centerYAnchor).isActive = true
-        iconImageView.leadingAnchor.constraint(equalTo: iconContainer.leadingAnchor, constant: 3).isActive = true
-        iconImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        iconImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        iconImageView.leadingAnchor.constraint(equalTo: iconContainer.leadingAnchor, constant: Metric.imageOffset).isActive = true
+        iconImageView.heightAnchor.constraint(equalToConstant: Metric.imageSize).isActive = true
+        iconImageView.widthAnchor.constraint(equalToConstant: Metric.imageSize).isActive = true
         
         label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        label.leadingAnchor.constraint(equalTo: iconContainer.trailingAnchor, constant: 10).isActive = true
-        
-        notificationLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        notificationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        label.leadingAnchor.constraint(equalTo: iconContainer.trailingAnchor, constant: Metric.labelOffset).isActive = true
     }
     
     // MARK: - Configure
     
-    func configure(with settings: NotificationSettingOptions) {
+    func configure(with settings: SettingOptions) {
         label.text = settings.title
         iconImageView.image = settings.icon
         iconContainer.backgroundColor = settings.iconBackgroundColor
-        notificationLabel.text = settings.notification
     }
     
     // MARK: - Initial
@@ -102,6 +88,22 @@ class NotificationTableViewCell: UITableViewCell {
         iconImageView.image = nil
         label.text = nil
         iconContainer.backgroundColor = nil
-        notificationLabel.text = nil
+    }
+}
+
+// MARK: - Constants
+
+extension SettingTableViewCell {
+    
+    enum Metric {
+        static let containerCornerRadius: CGFloat = 8
+        static let containerSize: CGFloat = 30
+        static let containerOffset: CGFloat = 15
+        
+        static let imageSize: CGFloat = 24
+        static let imageOffset: CGFloat = 3
+        
+        static let labelFont: CGFloat = 17
+        static let labelOffset: CGFloat = 10
     }
 }
