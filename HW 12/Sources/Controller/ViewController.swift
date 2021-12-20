@@ -7,37 +7,6 @@
 
 import UIKit
 
-struct Section {
-    let title: String
-    let options: [SettingType]
-}
-
-enum SettingType {
-    case staticCell(type: SettingOptions)
-    case switchCell(type: SettingSwitchOptions)
-    case notificationCell(type: NotificationSettingOptions)
-}
-
-struct SettingOptions {
-    let title: String
-    let icon: UIImage?
-    let iconBackgroundColor: UIColor
-}
-
-struct SettingSwitchOptions {
-    let title: String
-    let icon: UIImage?
-    let iconBackgroundColor: UIColor
-    var isOn: Bool
-}
-
-struct NotificationSettingOptions {
-    let title: String
-    let icon: UIImage?
-    let iconBackgroundColor: UIColor
-    let notification: String
-}
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let tableView = UITableView(frame: .zero, style: .grouped)
@@ -247,3 +216,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 }
+
