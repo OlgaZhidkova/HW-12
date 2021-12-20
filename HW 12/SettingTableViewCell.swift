@@ -28,13 +28,13 @@ class SettingTableViewCell: UITableViewCell {
         return image
     }()
     
-    private let lable: UILabel = {
-        let lable = UILabel()
-        lable.numberOfLines = 1
-        lable.font = UIFont.systemFont(ofSize: 17)
-        lable.textColor = .black
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
+    private let label: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.font = UIFont.systemFont(ofSize: 17)
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     // MARK: - Settings
@@ -42,7 +42,7 @@ class SettingTableViewCell: UITableViewCell {
     private func setupHierarchy() {
         iconContainer.addSubview(iconImageView)
         contentView.addSubview(iconContainer)
-        contentView.addSubview(lable)
+        contentView.addSubview(label)
     }
     
     private func setupLayout() {
@@ -56,14 +56,14 @@ class SettingTableViewCell: UITableViewCell {
         iconImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
         iconImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         
-        lable.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        lable.leadingAnchor.constraint(equalTo: iconContainer.trailingAnchor, constant: 10).isActive = true
+        label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: iconContainer.trailingAnchor, constant: 10).isActive = true
     }
     
     // MARK: - Configure
     
     func configure(with settings: SettingOptions) {
-        lable.text = settings.title
+        label.text = settings.title
         iconImageView.image = settings.icon
         iconContainer.backgroundColor = settings.iconBackgroundColor
     }
@@ -84,7 +84,7 @@ class SettingTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         iconImageView.image = nil
-        lable.text = nil
+        label.text = nil
         iconContainer.backgroundColor = nil
     }
 }

@@ -1,15 +1,15 @@
 //
-//  SwitchTableViewCell.swift
+//  NotificationTableViewCell.swift
 //  HW 12
 //
-//  Created by Ольга on 06.12.2021.
+//  Created by Ольга on 20.12.2021.
 //
 
 import UIKit
 
-class SwitchTableViewCell: UITableViewCell {
+class NotificationTableViewCell: UITableViewCell {
 
-    static let identifire = "SwitchTableViewCell"
+    static let identifire = "NotificationTableViewCel"
     
     private let iconContainer: UIView = {
         let view = UIView()
@@ -33,32 +33,28 @@ class SwitchTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.font = UIFont.systemFont(ofSize: 17)
         label.textColor = .black
+        label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let mySwitch: UISwitch = {
-        let mySwitch = UISwitch()
-        mySwitch.onTintColor = .systemGreen
-        mySwitch.translatesAutoresizingMaskIntoConstraints = false
-        mySwitch.addTarget(self, action: #selector(toggle(_:)), for: .valueChanged)
-        return mySwitch
+    private let notificationLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.font = UIFont.systemFont(ofSize: 17)
+        label.textColor = .systemGray
+        label.textAlignment = .right
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
-
-    @objc func toggle(_ sender: UISwitch) {
-            if mySwitch.isOn {
-                print("Нажата кнопка \(label.text ?? "").")
-            }
-        }
     
     // MARK: - Settings
     
     private func setupHierarchy() {
-        
-        contentView.addSubview(iconContainer)
         iconContainer.addSubview(iconImageView)
+        contentView.addSubview(iconContainer)
         contentView.addSubview(label)
-        contentView.addSubview(mySwitch)
+        contentView.addSubview(notificationLabel)
     }
     
     private func setupLayout() {
@@ -74,18 +70,18 @@ class SwitchTableViewCell: UITableViewCell {
         
         label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         label.leadingAnchor.constraint(equalTo: iconContainer.trailingAnchor, constant: 10).isActive = true
-       
-        mySwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        mySwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
+        
+        notificationLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        notificationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
     }
     
     // MARK: - Configure
     
-    func configure(with settings: SettingSwitchOptions) {
+    func configure(with settings: NotificationSettingOptions) {
         label.text = settings.title
         iconImageView.image = settings.icon
         iconContainer.backgroundColor = settings.iconBackgroundColor
-        mySwitch.isOn = settings.isOn
+        notificationLabel.text = settings.notification
     }
     
     // MARK: - Initial
@@ -106,7 +102,6 @@ class SwitchTableViewCell: UITableViewCell {
         iconImageView.image = nil
         label.text = nil
         iconContainer.backgroundColor = nil
-        mySwitch.isOn = false
+        notificationLabel.text = nil
     }
 }
-
